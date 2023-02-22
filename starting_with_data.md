@@ -33,7 +33,11 @@ FROM all_sessions
 GROUP BY "channelGrouping"
 
 Answer:
+
 1.) Organic Search: 8653 visitors
+
 2.) Direct: 2997 visitors
+
 3.) Referral: 2580 visitors
+
 
