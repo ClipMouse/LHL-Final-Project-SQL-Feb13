@@ -32,9 +32,11 @@ WHERE city is NULL
 
 To find values containing a term:
 
-SELECT * FROM analytics
+SELECT * FROM all_sessions
 
-WHERE city IN ("%not%")
+WHERE city LIKE '%no%'
+
+-- This returned all the cities with value "(not set)" and "not available in demo dataset" 
 
 
 To filter out duplicates:
