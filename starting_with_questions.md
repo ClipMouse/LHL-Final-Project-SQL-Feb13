@@ -37,7 +37,7 @@ ON x.full_visitor_id = y. full_visitor_id
 GROUP BY city, country
 ORDER BY AVG(units_sold) DESC NULLS LAST
 
-Answer: data output points to the USA being the top consumer by far.
+Answer: data output points to the USA being the top consumer by far, with ~19.24 products ordered on average. Next highest country is Czechia with an average of ~15.19 products ordered, then a steep drop-off to Mexico with ~1.83. 32-way tie between countries with a single product ordered. 
 
 **Question 3: Is there any pattern in the types (product categories) of products ordered from visitors in each city and country?**
 
