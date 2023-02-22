@@ -70,7 +70,7 @@ ORDER BY units_sold DESC
 NULLS LAST
 
 
-Answer:
+Answer: The United States accounts for the overwhelming majority of sales. There are cities in the US which are top in sales as well, but their data (or its data) is only listed as "not available in demo dataset." This would be the most notable pattern - that data for "city" is missing in many rows with significant sales numbers
 
 
 
@@ -78,6 +78,19 @@ Answer:
 **Question 5: Can we summarize the impact of revenue generated from each city/country?**
 
 SQL Queries:
+
+SELECT country, city, x.product_sku, y.unit_price, y.units_sold, (y.unit_price * y.units_sold)/1000000 as net_revenue, x.full_visitor_id, x.v2_product_name
+
+FROM all_sessions x
+
+LEFT JOIN analytics y
+
+ON x.full_visitor_id = y.full_visitor_id
+
+GROUP BY country, city, x.product_sku, y.unit_price, y.units_sold, net_revenue, x.full_visitor_id, x.v2_product_name
+ORDER BY net_revenue DESC
+
+NULLS LAST
 
 
 
