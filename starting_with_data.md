@@ -24,24 +24,16 @@ ORDER BY timeonsite ASC
 NULLS LAST
 
 
-Question 3: 
+Question 3: Which methods of arriving at the site are the most popular?
 
 SQL Queries:
 
-Answer:
-
-
-
-Question 4: 
-
-SQL Queries:
+SELECT "channelGrouping", COUNT(full_visitor_id) AS VISITS
+FROM all_sessions
+GROUP BY "channelGrouping"
 
 Answer:
+1.) Organic Search: 8653 visitors
+2.) Direct: 2997 visitors
+3.) Referral: 2580 visitors
 
-
-
-Question 5: 
-
-SQL Queries:
-
-Answer:
