@@ -44,11 +44,22 @@ Answer: data output points to the USA being the top consumer by far.
 
 SQL Queries:
 
+SELECT country, city, v2_product_category, units_sold, x.full_visitor_id
+
+FROM all_sessions x
+
+LEFT JOIN analytics y
+
+ON x.full_visitor_id = y.full_visitor_id
+
+GROUP BY v2_product_category, country, city, units_sold, x.full_visitor_id
+ORDER BY v2_product_category, units_sold DESC
+
+NULLS LAST
 
 
-Answer:
 
-
+Answer: Could not find any particular pattern. Too many missing values.
 
 
 
