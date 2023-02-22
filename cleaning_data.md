@@ -13,6 +13,10 @@ To SELECT despite letter casing:
 
 ILIKE
 
+To adjust for prices being 1,000,000 times too large:
+
+SELECT unit_price/1000000 as true_unit_price FROM analytics
+
 
 Wildcard % allows for any string
 
