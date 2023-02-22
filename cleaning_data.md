@@ -14,12 +14,7 @@ To adjust for prices being 1,000,000 times too large:
 
 SELECT unit_price/1000000 as true_unit_price FROM analytics
 
-
-Wildcard % allows for any string
-
-e.g. SELECT * FROM all_sessions
-
-WHERE v2_product_name ILIKE '%Google%'
+-- this creates a new column with the corrected unit price
 
 
 To find specific values (such as NULL or 0):
@@ -28,6 +23,7 @@ SELECT * FROM analytics
 
 WHERE city is NULL
 
+-- to identify missing values 
 
 
 To find values containing a term:
@@ -38,6 +34,16 @@ WHERE city LIKE '%no%'
 
 -- This returned all the cities with value "(not set)" and "not available in demo dataset" 
 
+-- Wildcard % allows for any string regardless of capitalization
+
+
+Search for a term with even greater flexibility: 
+
+SELECT * FROM all_sessions
+
+WHERE v2_product_name ILIKE '%Google%'
+
+-- this returned all products spelled "Google" or "google" or any other combination of upper and lower case letters
 
 To filter out duplicates:
 
